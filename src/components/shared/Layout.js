@@ -1,13 +1,15 @@
 import styles from './Layout.module.css';
 import Header from './Header';
 import Menu from './Menu';
+import { useState } from 'react';
 
-function Layout({ children }) {
+function Layout({ children, activeMenu }) {
+	const [menu,setMenu] = useState(true);
   return (
     <div className={styles.container}>
-      <Header />
+      <Header menu={menu} setMenu={setMenu} />
       <div className={styles.layout}>
-        <Menu />
+        <Menu activeMenu={activeMenu} menu={menu}/>
         <div className={styles.contents}>{children}</div>
       </div>
     </div>

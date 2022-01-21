@@ -2,7 +2,7 @@ import Layout from '../components/shared/Layout';
 
 function Home() {
   return (
-    <Layout>
+    <Layout activeMenu={Home}>
       <div>* 홈</div>
     </Layout>
   );
